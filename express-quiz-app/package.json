@@ -4,7 +4,7 @@
     "description": "an express app for quizzes",
     "main": "server.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "node test/test1.js",
         "start": "npx nodemon server.js"
     },
     "author": "Cydney Auman",
