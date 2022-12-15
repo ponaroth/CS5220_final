@@ -10,6 +10,8 @@ app.use(express.json());
 // add route
 app.use('/quizzes', quizzes);
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });
+
+module.exports = server;
