@@ -1,0 +1,20 @@
+{
+    "name": "express-quiz-app",
+    "version": "1.0.0",
+    "description": "an express app for quizzes",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "npx nodemon server.js"
+    },
+    "author": "Cydney Auman",
+    "license": "MIT",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.1",
+        "supertest": "^6.3.3"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20"
+    }
+}

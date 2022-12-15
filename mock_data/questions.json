@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "text": "REST only supports a JSON message format.  REST APIs cannot return other message formats like XML.",
+        "points": 10,
+        "type": "true/false",
+        "answers_id": 1
+    },
+    {
+        "id": 2,
+        "text": "The HTTP Verb that should be used for updating a specific data entry by using an id in the URL and sending the data details in the body.",
+        "points": 10,
+        "type": "fill in the blank",
+        "answers_id": 2
+    },
+    {
+        "id": 3,
+        "text": "    The __________ is what allows JavaScript running on Node.js to perform non-blocking I/O operations. ",
+        "points": 10,
+        "type": "fill in the blank",
+        "answers_id": 3
+    },
+    {
+        "id": 4,
+        "text": "What keyword is the most appropriate way to declare modules when requiring them into your JavaScript file?",
+        "points": 10,
+        "type": "multiple choice",
+        "answers_id": 4
+    }
+]

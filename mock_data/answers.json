@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "choices": [
+            { "answer": true, "correct": false },
+            { "answer": false, "correct": true }
+        ]
+    },
+    {
+        "id": 2,
+        "choices": [
+            { "answer": "PUT", "correct": true },
+            { "answer": "put", "correct": true }
+        ]
+    },
+    {
+        "id": 3,
+        "choices": [
+            { "answer": "Event Loop", "correct": true },
+            { "answer": "event loop", "correct": true }
+        ]
+    },
+    {
+        "id": 4,
+        "choices": [
+            { "answer": "var", "correct": false },
+            { "answer": "const", "correct": true },
+            { "answer": "let", "correct": false },
+            { "answer": "none", "correct": false }
+        ]
+    }
+]

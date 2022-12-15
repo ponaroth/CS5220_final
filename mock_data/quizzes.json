@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Intermediate JS Quiz",
+        "instructions": "Please select the best answer.",
+        "start": "2022-09-01",
+        "end": "2022-09-04",
+        "timer": {
+            "isTimed": true,
+            "time_limit": 10
+        },
+        "question_ids": [1, 2]
+    },
+    {
+        "id": 2,
+        "name": "Advanced JS Quiz",
+        "instructions": "Please select the best answer.",
+        "start": "2022-09-25",
+        "end": "2022-09-28",
+        "timer": {
+            "isTimed": false,
+            "time_limit": null
+        },
+        "question_ids": [3, 4]
+    }
+]
