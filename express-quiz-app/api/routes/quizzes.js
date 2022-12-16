@@ -52,13 +52,13 @@ router.put('/:id', (req, res) => {
     const today = datetime.getYearMonthDay();
 
     if (quiz) {
-    //     if (today > quiz.start) {
-    //         res.status(403).json({
-    //             error: `Cannot edit quiz with start time of ${quiz.start}`,
-    //         });
-    //     } else {
+        if (today > quiz.start) {
+            res.status(403).json({
+                error: `Cannot edit quiz with start time of ${quiz.start}`,
+            });
+        } else {
             res.json({ ...quiz, ...body });
-    //     }
+        }
     } else {
         res.status(404).json({ error: `Quiz by id ${id} not found.` });
     }
@@ -74,13 +74,13 @@ router.delete('/:id', (req, res) => {
     const today = datetime.getYearMonthDay();
 
     if (quiz) {
-        // if (today > quiz.start) {
-        //     res.status(403).json({
-        //         error: `Cannot delete quiz with start time of ${quiz.start}`,
-        //     });
-        // } else {
+        if (today > quiz.start) {
+            res.status(403).json({
+                error: `Cannot delete quiz with start time of ${quiz.start}`,
+            });
+        } else {
             res.json({ deleted: { name: quiz.name, id: quiz.id } });
-        // }
+        }
     } else {
         res.status(404).json({ error: `Quiz by id ${id} not found.` });
     }

@@ -22,5 +22,17 @@
             "time_limit": null
         },
         "question_ids": [3, 4]
+    },
+    {
+        "id": 3,
+        "name": "test Quiz",
+        "instructions": "Please select the best answer.",
+        "start": "2023-09-25",
+        "end": "2023-09-28",
+        "timer": {
+            "isTimed": false,
+            "time_limit": null
+        },
+        "question_ids": []
     }
 ]

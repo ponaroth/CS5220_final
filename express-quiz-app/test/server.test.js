@@ -10,7 +10,7 @@ describe('1. GET quizzes with expectation tests', function () {
       .then((response) => {
         // Check the response type and length
         expect(Array.isArray(response.body)).toBeTruthy()
-        expect(response.body.length).toEqual(2)
+        expect(response.body.length).toEqual(3)
         expect(response.body).toBeInstanceOf(Array)
         // Check the response data
         expect(response.body[0].id).toBe(1)
@@ -61,7 +61,7 @@ describe('1. GET quizzes with expectation tests', function () {
 describe("2. Add and Update Quiz test", function () {
   test('Add quiz should succeed', async () => {
     let newQuiz = {
-      "name": "Quiz 3",
+      "name": "Quiz 4",
       "instructions": "test text.",
       "timer": {
           "isTimed": true,
@@ -80,10 +80,10 @@ describe("2. Add and Update Quiz test", function () {
 
   test('Update quiz should succeed', async () => {
     let update = {
-      "question_ids": [4, 5]
+      "question_ids": [5, 6]
   }
     await request(server)
-      .put('/quizzes/1')
+      .put('/quizzes/3')
       .send(update)
       .expect(200)
       .expect((res) => {
@@ -94,9 +94,9 @@ describe("2. Add and Update Quiz test", function () {
 
 //// Delete and Error test ////
 describe("3. Delete and Error test", function () {
-  it('Delete quiz 1 should succeed', function (done) {
+  it('Delete quiz should succeed', function (done) {
     request(server)
-      .delete('/quizzes/1')
+      .delete('/quizzes/3')
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200, done);
