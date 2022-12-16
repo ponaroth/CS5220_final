@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
             return quiz.name.toLowerCase().includes(name.toLowerCase());
         });
     }
-
+    
     res.json(all);
 });
 

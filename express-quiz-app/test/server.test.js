@@ -1,12 +1,8 @@
 const supertest = require('supertest');
 const server = require('../server');
+const base64 = require('base-64');
 
-test("GET /quizzes", async () => {
-	// const post = await Post.create({
-	// 	title: "Post 1",
-	// 	content: "Lorem ipsum",
-	// })
-
+test("1. Get quiz ", async () => {
 	await supertest(server)
 		.get("/quizzes")
 		.expect(200)
@@ -16,48 +12,33 @@ test("GET /quizzes", async () => {
 			expect(response.body.length).toEqual(2)
 
 			// Check the response data
-			// expect(response.body[0]._id).toBe(post.id)
-			// expect(response.body[0].title).toBe(post.title)
-			// expect(response.body[0].content).toBe(post.content)
+			expect(response.body[0].id).toBe(1)
+
 		})
-})
+});
 
 
-// describe("GET /quizzes", () => {
-//   describe("get all quizes", () => {
+///// mocha describe() and authorization with token ////
+describe('2. GET /answers with bearer token', function() {
+  it('responds with json', function(done) {
+    supertest(server)
+      .get('/answers/byToken')
+      .set('Authorization', 'Bearer 12345')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200, done);
+  });
+});
 
-//     test("should respond with a 200 status code", async () => {
-//       const response = await supertest(server).get("/quizzes");
-//       expect(response.statusCode).toBe(200);
-//     })
-//     // test("should specify json in the content type header", async () => {
-//     //   const response = await request(app).post("/users").send({
-//     //     username: "username",
-//     //     password: "password"
-//     //   })
-//     //   expect(response.headers['content-type']).toEqual(expect.stringContaining("json"))
-//     // })
-//     // test("response has userId", async () => {
-//     //   const response = await request(app).post("/users").send({
-//     //     username: "username",
-//     //     password: "password"
-//     //   })
-//     //   expect(response.body.userId).toBeDefined()
-//     // })
-//   })
+///// mocha describe() and authorization with username and password ////
+describe('2. GET /answers with username and password', function() {
 
-// //   describe("when the username and password is missing", () => {
-// //     test("should respond with a status code of 400", async () => {
-// //       const bodyData = [
-// //         {username: "username"},
-// //         {password: "password"},
-// //         {}
-// //       ]
-// //       for (const body of bodyData) {
-// //         const response = await request(app).post("/users").send(body)
-// //         expect(response.statusCode).toBe(400)
-// //       }
-// //     })
-// //   })
-
-// })
+  it('responds with json', function(done) {
+    supertest(server)
+      .get('/answers/byCredentials')
+      .set('Authorization', 'Basic ' + base64.encode('admin:password'))
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200, done);
+  });
+});
