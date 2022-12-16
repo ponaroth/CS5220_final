@@ -40,7 +40,7 @@ describe("PUT /quizzes/:id error handling", () => {
 describe("DELETE /quizzes/:id error handling", () => {
 	it("should return 404 for invalid quizzes", async () => {
 		await supertest(server)
-			.put('/quizzes/8q1jk91mwmzc')
+			.delete('/quizzes/8q1jk91mwmzc')
 			.expect(404);
 	});
 
